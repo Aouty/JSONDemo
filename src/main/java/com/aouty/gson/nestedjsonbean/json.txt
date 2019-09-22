@@ -1,0 +1,25 @@
+JSON格式的数据：tagCategory 标签分类
+参考：https://www.cnblogs.com/baiyi168/p/9634632.html
+https://blog.csdn.net/cxu123321/article/details/86527612
+https://blog.csdn.net/guolin_blog/article/details/17482095
+注意：
+    1）内部嵌套的类必须是static的，要不然解析会出错；
+    2）类里面的属性名必须跟Json字段里面的Key一模一样；
+    3）因为Json字段里面的Key存在中文，所以必须在相应的字段上使用@SerializedName("中国画")注解，给Key取别名。
+    4）内部嵌套用{}嵌套的就定义为 public ChinaPicture chinaPicture，用[]括起来的部分是一个List，所以定义为 public List<String> years。
+    5）如果不想写get和set方法，只需要将字段定义成public。
+
+{"ret":0,
+    "response":{
+        "tagCategory":{
+            "中国画":{
+                "年代":["先秦两汉","战国楚国","魏晋南北","隋唐五代","南宋北宋","元代","明清","近现代","年代不详","其他"],
+                "技法":["泼墨","工笔","写意","白描","写生","皴法","没骨","指头画","其他"]
+            },
+            "书法":{
+                "分类":["书法","碑帖","写本写经","书札文牍","其他"],
+                "书体":["篆书","隶书","楷书","草书","行书","其他"]
+            }
+        }
+    }
+}

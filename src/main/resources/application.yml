@@ -1,0 +1,8 @@
+## Server Config
+server:
+  servlet:
+    context-path: /json-demo
+  port: 8099
+spring:
+  application:
+    name: json-demo
